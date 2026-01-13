@@ -1,8 +1,8 @@
 
 import React, { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { BD_DATA } from '../data';
-import Breadcrumbs from '../components/Breadcrumbs';
+import { BD_DATA } from '../data.ts';
+import Breadcrumbs from '../components/Breadcrumbs.tsx';
 
 const DivisionDetail: React.FC = () => {
   const { divId } = useParams<{ divId: string }>();

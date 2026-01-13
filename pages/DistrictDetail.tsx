@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { BD_DATA } from '../data';
-import Breadcrumbs from '../components/Breadcrumbs';
+import { BD_DATA } from '../data.ts';
+import Breadcrumbs from '../components/Breadcrumbs.tsx';
 
 const DistrictDetail: React.FC = () => {
   const { divId, distId } = useParams<{ divId: string, distId: string }>();
@@ -31,27 +31,21 @@ const DistrictDetail: React.FC = () => {
       </div>
 
       <div className="space-y-4 max-w-3xl">
-        {district.upazilas.length > 0 ? (
-          district.upazilas.map(upazila => (
-            <Link 
-              key={upazila.id} 
-              to={`/division/${division.id}/district/${district.id}/upazila/${upazila.id}`}
-              className="block p-5 bg-white rounded-lg border border-slate-100 hover:bg-emerald-50 transition-colors group"
-            >
-              <div className="flex justify-between items-center">
-                <div>
-                  <h4 className="text-lg font-bold text-slate-800">{upazila.name} উপজেলা</h4>
-                  <p className="text-sm text-slate-500 mt-1">পর্যটন কেন্দ্র দেখতে ক্লিক করুন</p>
-                </div>
-                <span className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded text-xs poppins font-bold">VIEW PLACES</span>
+        {district.upazilas.map(upazila => (
+          <Link 
+            key={upazila.id} 
+            to={`/division/${division.id}/district/${district.id}/upazila/${upazila.id}`}
+            className="block p-5 bg-white rounded-lg border border-slate-100 hover:bg-emerald-50 transition-colors group"
+          >
+            <div className="flex justify-between items-center">
+              <div>
+                <h4 className="text-lg font-bold text-slate-800">{upazila.name} উপজেলা</h4>
+                <p className="text-sm text-slate-500 mt-1">পর্যটন কেন্দ্র দেখতে ক্লিক করুন</p>
               </div>
-            </Link>
-          ))
-        ) : (
-          <div className="p-8 text-center text-slate-400 bg-white rounded-lg border border-dashed border-slate-200">
-            এই জেলার জন্য কোনো উপজেলা তথ্য এখনও নেই।
-          </div>
-        )}
+              <span className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded text-xs poppins font-bold">VIEW PLACES</span>
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );

@@ -1,13 +1,13 @@
 
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import DivisionDetail from './pages/DivisionDetail';
-import DistrictDetail from './pages/DistrictDetail';
-import UpazilaDetail from './pages/UpazilaDetail';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import Layout from './components/Layout.tsx';
+import Home from './pages/Home.tsx';
+import DivisionDetail from './pages/DivisionDetail.tsx';
+import DistrictDetail from './pages/DistrictDetail.tsx';
+import UpazilaDetail from './pages/UpazilaDetail.tsx';
+import About from './pages/About.tsx';
+import Contact from './pages/Contact.tsx';
 
 const App: React.FC = () => {
   return (
